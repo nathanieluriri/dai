@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+<FilesMatch "style\.css$">
+    Header set Cache-Control "public, max-age=600, must-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.svg$">
+    Header set Cache-Control "public, max-age=600, must-revalidate"
+</FilesMatch>
+<FilesMatch "\.js$">
+    Header set Cache-Control "public, max-age=600, must-revalidate"
+</FilesMatch>
+
