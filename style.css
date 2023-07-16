@@ -249,6 +249,9 @@ button{
     border: none;
     padding-inline: 20px;
     border-radius: 45%;
+
+
+
 }
 button:active  {
 transition: ease 500ms;

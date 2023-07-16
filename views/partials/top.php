@@ -17,8 +17,8 @@
                 <th >Dead </th>
                 <th >Injured</th>
             </thead>
-            <tbody >
-                <tr >
+            <tbody id="tbody-container" >
+                <!-- <tr >
                     <td>2345</td>
                     <td>2</td>
                     <td>2</td>
@@ -42,7 +42,7 @@
                     <td>2345</td>
                     <td>2</td>
                     <td>2</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
         
