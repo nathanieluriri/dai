@@ -179,7 +179,7 @@ else
 {
   let tr = document.createElement("tr")
   let gtd = document.createElement("td")
-  td.innerHTML= guess;
+  gtd.innerHTML= guess;
   tr.appendChild(gtd);
   tbodyContainer.appendChild(tr)
   guess=[];
