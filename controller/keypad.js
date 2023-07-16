@@ -8,21 +8,50 @@ var fourth=document.getElementById("4")
 function indicator (noc){
   switch(noc)
   {
+    case 0:
+      first.setAttribute("empty",true)
+      second.setAttribute("empty",true)
+      third.setAttribute("empty",true)
+      fourth.setAttribute("empty",true)
+      console.log("ssome")
+      break;
+
     case 1:
       first.setAttribute("empty",false)
+      second.setAttribute("empty",true)
+      third.setAttribute("empty",true)
+      fourth.setAttribute("empty",true)
       break;
 
     case 2:
       second.setAttribute("empty",false)
+      third.setAttribute("empty",true)
+      fourth.setAttribute("empty",true)
+
       break;
     case 3:
      third.setAttribute("empty",false)
+     fourth.setAttribute("empty",true)
       break;
     case 4:
       fourth.setAttribute("empty",false)
       break;
 
   }
+}
+
+function redox (noc){
+  
+  
+  if(noc>=1 && noc<=4){
+    number_of_clicks-=1
+    indicator (number_of_clicks)
+  }
+  else if (noc===0){
+    alert("nigga")
+  }
+  console.log(noc)
+ 
 }
 
 
@@ -66,11 +95,13 @@ function btnremover (noc){
   }
 }
 
-function eventhandler (event) {
+function eventhandler () {
+  if (number_of_clicks<4 && number_of_clicks >=0){
   var buttonContent = event.target.textContent;
   console.log('Button content:', buttonContent);
   
   number_of_clicks +=1
+}
   indicator(number_of_clicks)
   if (number_of_clicks===4){
     btnremover (number_of_clicks)
@@ -78,22 +109,6 @@ function eventhandler (event) {
 }
 }
 
-if (number_of_clicks<4){
-
-
-button1.addEventListener('click',eventhandler);
-button2.addEventListener('click',eventhandler);
-button3.addEventListener('click',eventhandler);
-button4.addEventListener('click',eventhandler);
-button5.addEventListener('click',eventhandler);
-button6.addEventListener('click',eventhandler);
-button7.addEventListener('click',eventhandler);
-button8.addEventListener('click',eventhandler);
-button9.addEventListener('click',eventhandler);
-button0.addEventListener('click',eventhandler);
-
-  
-}
 
 
 
