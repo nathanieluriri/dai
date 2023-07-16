@@ -18,31 +18,7 @@
                 <th >Injured</th>
             </thead>
             <tbody id="tbody-container" >
-                <!-- <tr >
-                    <td>2345</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr >
-                    <td  id="Myguess">1234</td>
-                    <td id="dead">1</td>
-                    <td id="injured">1</td>
-                </tr>
-                <tr >
-                    <td>3215</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr >
-                    <td>2345</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr >
-                    <td>2345</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr> -->
+               
             </tbody>
         </table>
         

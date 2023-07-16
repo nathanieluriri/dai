@@ -9,7 +9,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<script defer src="controller/keypad.js"></script>
+<script src="controller/keypad.js"></script>
+
+
 </head>
 <body>
     <div class="top glassish"><div class="logo"> <a href="\"><img src="imgs/home-light.svg" alt="could not see"></a> </div> 

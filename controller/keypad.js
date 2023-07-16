@@ -1,4 +1,3 @@
-
 let number_of_clicks= 0 ;
 const kill = document.getElementById("kill")
 const first =document.getElementById("1")
@@ -8,27 +7,113 @@ const fourth=document.getElementById("4")
 
 const tbodyContainer = document.getElementById("tbody-container")
 
-var btns =document.getElementsByClassName('k-pdbtn');
+function indicator (noc){
+  const first =document.getElementById("1")
+  const second=document.getElementById("2")
+  const third=document.getElementById("3")
+  const fourth=document.getElementById("4")
+  switch(noc)
 
-  // Get a reference to the button element
+  {
+    case 0:
+      first.setAttribute("empty",true)
+      second.setAttribute("empty",true)
+      third.setAttribute("empty",true)
+      fourth.setAttribute("empty",true)
+     
+      break;
+
+    case 1:
+     
+    
+      first.setAttribute("empty",false)
+      second.setAttribute("empty",true)
+      third.setAttribute("empty",true)
+      fourth.setAttribute("empty",true)
+      break;
+
+    case 2:
+      second.setAttribute("empty",false)
+      third.setAttribute("empty",true)
+      fourth.setAttribute("empty",true)
+
+      break;
+    case 3:
+     third.setAttribute("empty",false)
+     fourth.setAttribute("empty",true)
+      break;
+    case 4:
+      fourth.setAttribute("empty",false)
+      break;
+
+  }
+}
+
+
+let uniqueRandomIntegers = generateUniqueRandomIntegers(0, 9, 4);
+convertListToStringsInPlace(uniqueRandomIntegers) 
+
+
+function guessing_result (code){
+
+
+  console.log(uniqueRandomIntegers); 
+}
 
 
 
+// Generate a list of unique random integers within a given range
+function generateUniqueRandomIntegers(min, max, count) {
+  var result = [];
+  
+  while (result.length < count) {
+    var randomInteger = Math.ceil(Math.random() * (max - min + 1)) + min - 1;
+    
+    if (!result.includes(randomInteger)) {
+      result.push(randomInteger);
+    }
+  }
+  
+  return result;
+}
+
+// Convert a list of integers to a list of strings
+function convertListToStringsInPlace(list) {
+  for (var i = 0; i < list.length; i++) {
+    list[i] = list[i].toString();
+  }
+}
+        
+
+function guessingResult(PlayersGuess, OpponentsCode) {
+  OpponentsCode = OpponentsCode.join('');
+  let dead = 0;
+  let injured = 0;
+
+  for (let i = 0; i <= 4; i++) {
+    if (PlayersGuess[i] === OpponentsCode[i]) {
+      dead += 1;
+     
+    }
+    if (PlayersGuess[i] === OpponentsCode[0] && PlayersGuess[i] !== OpponentsCode[i]) {
+      injured += 1;
+    } else if (PlayersGuess[i] === OpponentsCode[1] && PlayersGuess[i] !== OpponentsCode[i]) {
+      injured += 1;
+    } else if (PlayersGuess[i] === OpponentsCode[2] && PlayersGuess[i] !== OpponentsCode[i]) {
+      injured += 1;
+    } else if (PlayersGuess[i] === OpponentsCode[3] && PlayersGuess[i] !== OpponentsCode[i]) {
+      injured += 1;
+    }
+    if (dead === 4) {
+      alert("You won congratulations")
+      
+    }
+  }
+
+    return { dead, injured };
+}
 
 
-         // Get the button element
-    var button1 = document.getElementById('one');
-    var button2 = document.getElementById('two');
-    var button3 = document.getElementById('three');
-    var button4 = document.getElementById('four');
-    var button5 = document.getElementById('five');
-    var button6 = document.getElementById('six');
-    var button7 = document.getElementById('seven');
-    var button8 = document.getElementById('eight');
-    var button9 = document.getElementById('nine');
-    var button0 = document.getElementById('zero');
-
-// Add a click event listener to the button
 
 
 
@@ -66,9 +151,9 @@ function redox (noc){
     guess.pop()
   }
   else if (noc===0){
-    alert("nigga")
+    alert("Bakkaaa")
   }
-  console.log(noc)
+
  
 }
 
@@ -88,7 +173,9 @@ function eventhandler (event) {
     var buttonContent = event.target.textContent;
      addToUniqueList(buttonContent)
   
-    console.log('guess:', guess);
+   
+  
+  
     
     number_of_clicks +=1
     
@@ -109,40 +196,6 @@ function eventhandler (event) {
 
 
 
-  function indicator (noc){
-    switch(noc)
-    {
-      case 0:
-        first.setAttribute("empty",true)
-        second.setAttribute("empty",true)
-        third.setAttribute("empty",true)
-        fourth.setAttribute("empty",true)
-        console.log("ssome")
-        break;
-  
-      case 1:
-        first.setAttribute("empty",false)
-        second.setAttribute("empty",true)
-        third.setAttribute("empty",true)
-        fourth.setAttribute("empty",true)
-        break;
-  
-      case 2:
-        second.setAttribute("empty",false)
-        third.setAttribute("empty",true)
-        fourth.setAttribute("empty",true)
-  
-        break;
-      case 3:
-       third.setAttribute("empty",false)
-       fourth.setAttribute("empty",true)
-        break;
-      case 4:
-        fourth.setAttribute("empty",false)
-        break;
-  
-    }
-  }
   
 
   // function for unique list
@@ -168,19 +221,33 @@ function eventhandler (event) {
   function AddGuess(event)
 {
 
-
+  const tbodyContainer = document.getElementById("tbody-container")
 
 if(guess.length<4)
 {
-  console.log("Incomplete digits")
+ alert("Incomplete digits")
 
 }
 else
 {
+  let result =guessingResult(guess, uniqueRandomIntegers)
+  console.log( "unique number",uniqueRandomIntegers)
+  let dead = result.dead
+  let injured = result["injured"]
+  console.log("dead:",dead,"injured:",injured)
+
   let tr = document.createElement("tr")
   let gtd = document.createElement("td")
+  let dtd = document.createElement("td");
+
+  let itd = document.createElement("td");
+  dtd.innerHTML=dead;
+  itd.innerHTML=injured;
+
   gtd.innerHTML= guess.join("");
   tr.appendChild(gtd);
+  tr.appendChild(dtd);
+  tr.appendChild(itd);
   tbodyContainer.appendChild(tr)
   guess=[];
   number_of_clicks=0;

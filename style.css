@@ -344,7 +344,7 @@ h1{
     }
     table {
         display: block;
-    max-height: 305px;
+    max-height: 170px;
     overflow-y: scroll;
     overflow-x: hidden;
     width: fit-content ;

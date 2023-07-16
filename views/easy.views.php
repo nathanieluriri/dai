@@ -1,3 +1,4 @@
+
 <?php 
 $back = "/one";
 require("partials/base.php");
