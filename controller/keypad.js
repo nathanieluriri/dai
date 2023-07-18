@@ -57,7 +57,7 @@ convertListToStringsInPlace(uniqueRandomIntegers)
 function guessing_result (code){
 
 
-  console.log(uniqueRandomIntegers); 
+  // console.log(uniqueRandomIntegers); 
 }
 
 
@@ -86,13 +86,16 @@ function convertListToStringsInPlace(list) {
         
 
 function guessingResult(PlayersGuess, OpponentsCode) {
-  OpponentsCode = OpponentsCode.join('');
+  
   let dead = 0;
   let injured = 0;
 
-  for (let i = 0; i <= 4; i++) {
+  for (let i = 0; i < 4; i++) {
+
+
     if (PlayersGuess[i] === OpponentsCode[i]) {
       dead += 1;
+     
      
     }
     if (PlayersGuess[i] === OpponentsCode[0] && PlayersGuess[i] !== OpponentsCode[i]) {
@@ -189,7 +192,7 @@ function eventhandler (event) {
 
     if (number_of_clicks===4)
   {
-      alert("click on guess to begin")
+      // alert("click on guess to begin")
   }
   }
   
@@ -231,7 +234,7 @@ if(guess.length<4)
 else
 {
   let result =guessingResult(guess, uniqueRandomIntegers)
-  console.log( "unique number",uniqueRandomIntegers)
+  // console.log( "unique number",uniqueRandomIntegers)
   let dead = result.dead
   let injured = result["injured"]
   console.log("dead:",dead,"injured:",injured)

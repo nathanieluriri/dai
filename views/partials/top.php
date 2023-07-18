@@ -1,6 +1,4 @@
-<script>
-    alert("enter your code")
-</script>
+
 
 
 <div class= "gameui" >

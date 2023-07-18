@@ -9,8 +9,8 @@
     <div class="butns">
         <div class= "k-pd">
                 <div can-be-clicked="true" id="one" class="k-pdbtn" class="numbers"><button  onclick="eventhandler(event)" ><p>1</p></button></div>
-                <div can-be-clicked="true" id="two" class="k-pdbtn" class="numbers" ><button  onclick="eventhandler(event)" ><p> 2 </P></button></div>
-                <div can-be-clicked="true" id="three" class="k-pdbtn" class="numbers" ><button  onclick="eventhandler(event)" ><p> 3 </P></button></div>
+                <div can-be-clicked="true" id="two" class="k-pdbtn" class="numbers" ><button  onclick="eventhandler(event)" ><p>2</P></button></div>
+                <div can-be-clicked="true" id="three" class="k-pdbtn" class="numbers" ><button  onclick="eventhandler(event)" ><p>3</P></button></div>
         </div>
 
         <div class= "k-pd">
